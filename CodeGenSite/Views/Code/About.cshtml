@@ -1,0 +1,59 @@
+﻿@using CodeGenSite.Utils
+@{
+    Page.Title = "CodeGenerate.me - A little bit about us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- About us -->
+<div class="row">
+    <div class="span8 offset2">
+        <img class="bs-icon" src="@Url.Content(string.Format("{0}{1}", "~/content/img/bomb.png?v=", @Html.GetVersion()))" alt="CodeGenerate.me API">
+        <h2>
+            About Us</h2>
+        <p>
+            <strong>CodeGenerate.me</strong> is a free service that lets you easily create all
+            kinds of barcodes. This means that you can create QR and Barcodes for all your advertising
+            and packaging needs. It's the bomb.
+        </p>
+    </div>
+</div>
+<!-- Features -->
+<div class="row">
+    <div class="span4 offset2">
+        <img class="bs-icon" src="@Url.Content(string.Format("{0}{1}", "~/content/img/blazing.png?v=", @Html.GetVersion()))" alt="CodeGenerate.me API">
+        <h3>
+            Blazing Fast Servers</h3>
+        <p>
+            CodeGenerate.me uses the power of <a href="https://www.windowsazure.com/">Windows Azure</a>
+            and a world class CDN, so you will always receive super fast response times.
+        </p>
+    </div>
+    <div class="span4">
+        <img class="bs-icon" src="@Url.Content(string.Format("{0}{1}", "~/content/img/free-updates.png?v=", @Html.GetVersion()))" alt="CodeGenerate.me API">
+        <h3>
+            Free Updates</h3>
+        <p>
+            We are constantly adding new features to the site. Any future updates will
+            always be free.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="span4 offset2">
+        <img class="bs-icon" src="@Url.Content(string.Format("{0}{1}", "~/content/img/qrcode.png?v=", @Html.GetVersion()))" alt="CodeGenerate.me API">
+        <h3>
+            API</h3>
+        <p>
+            We are currently developing an API that will eaily allow you to create your codes.
+            Harness the power of CodeGenerate.me to quickly and efficiently generate Barcodes
+            and QR codes.
+        </p>
+    </div>
+    <div class="span4">
+        <img class="bs-icon" src="@Url.Content(string.Format("{0}{1}", "~/content/img/responsive.png?v=", @Html.GetVersion()))" alt="CodeGenerate.me API">
+        <h3>
+            Responsive</h3>
+        <p>
+            You can view this website on any range of devices and it will provide a consistent
+            experience, no matter what.
+        </p>
+    </div>
+</div>

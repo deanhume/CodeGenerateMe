@@ -1,0 +1,54 @@
+﻿@{
+    Page.Title = "CodeGenerate.me - Create QR codes and Barcodes quickly and easily.";
+    Layout = "~/views/shared/_layout.cshtml";
+}
+<!-- Intro Text -->
+<div class="row">
+    <div class="span4 offset4">
+        <p align="center" style="font-size: 22px;">
+            Create QR codes and Barcodes on the go - Quickly and easily.</p>
+        <p align="center" style="font-size: 14px;">
+            <span style="color: #51A351">Just choose a barcode type below and hit enter.</span>
+        </p>
+    </div>
+</div>
+<br />
+<!-- Elements -->
+<div class="row">
+    <div class="span4 offset4">
+        <p align="center">
+            <select id="barcodeType" name="barcodeType" class="inset-ddlinput">
+                <option value="">Select a Barcode Type</option>
+                <option value="qrcode">QR Code</option>
+                <option value="code128a">Code128</option>
+                <option value="code39">Code 39</option>
+                <option value="ean13">EAN 13</option>
+                <option value="ean8">EAN 8</option>
+                <option value="pdf417">PDF 417</option>
+                <option value="codabar">Codabar</option>
+            </select>
+        </p>
+        <p align="center">
+            <input type="text" id="barcodeValue" class="inset-textinput" placeholder="Enter text...." /></p>
+        <br />
+        <p align="center">
+            <input type="button" class="btn btn-large btn-success" data-toggle="button" id="CreateButton"
+                value="Create Code" /></p>
+        <br />
+        <br />
+        <!-- Alert -->
+        <div class="alert alert-error" id="alertBox">
+        </div>
+        <!-- Progress bar -->
+        <div class="progress progress-striped active" id="progressBar">
+            <div class="bar" style="width: 40%;">
+            </div>
+        </div>
+        <!-- Image -->
+        <div id="image" align="center">
+        </div>
+    </div>
+    <br />
+</div>
+<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/bootstrap/js")"></script>
+

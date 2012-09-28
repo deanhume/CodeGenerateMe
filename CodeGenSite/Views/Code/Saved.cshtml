@@ -1,0 +1,34 @@
+﻿@{
+    Page.Title = "CodeGenerate.me - Your saved codes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p align="center" style="font-size: 22px;">
+    Your saved images</p>
+    <br/>
+<!-- Image -->
+        <div id="image" align="center">
+        </div>
+
+<script>
+    $(document).ready(function () {
+        var html = "";
+
+        // Check if user can handle localStorage first.
+        if (typeof (localStorage) != 'undefined') {
+            // Get the old values
+            var savedCodes = localStorage.getItem('savedCodes');
+
+            if (savedCodes == null) {
+                html = "<p>You do not currently have any images saved.</p>";
+            } else {
+                html = savedCodes;
+            }
+        }
+
+        $('#image').html('');
+        $('#image').prepend("<br/>" + html);
+        $('#image').css("border", "1px dotted #CCCCCC");
+    });
+</script>
+

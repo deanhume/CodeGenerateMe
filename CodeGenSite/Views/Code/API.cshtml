@@ -1,0 +1,90 @@
+﻿@model CodeGenSite.Models.ContactModel
+@{
+    Page.Title = "CodeGenerate.me - Beta RESTful API";
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <!-- Action headers -->
+    if (Model.SentSuccesfully == 3)
+    {
+        <div class="row">
+            <div class="span8 offset2">
+                <h2>
+                    CodeGenerate.me for Developers</h2>
+                <p class="alert alert-error">
+                    Sorry, we encountered an error while sending your email. Please try again.</p>
+            </div>
+        </div>
+    }
+    else if (Model.SentSuccesfully == 1)
+    {
+        <div class="row">
+            <div class="span8 offset2">
+                <h2>
+                    CodeGenerate.me for Developers</h2>
+                <p>
+                    We are currently in the process of developing a RESTful API for automatic QR Codes
+                    and Barcode creation. If you are interested in the Beta phase, please let use know
+                    by filling in the information below. We will be in contact shortly.</p>
+            </div>
+        </div>
+    }
+    else if (Model.SentSuccesfully == 2)
+    {
+        <div class="row">
+            <div class="span7 offset2">
+                <h2>
+                    CodeGenerate.me for Developers</h2>
+                <p class="alert alert-success">
+                    Thank you for your email, we will be in contact shortly!</p>
+            </div>
+        </div>
+    }
+
+    <!-- Form -->
+    if (Model.SentSuccesfully != 2)
+    {
+        <div class="row">
+            <div class="span7 offset2 emo">
+                <i class="icon-barcode"></i>API Beta
+                <br />
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Subject)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Subject)
+                    @Html.ValidationMessageFor(model => model.Subject)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Description)
+                </div>
+                <div>
+                    <textarea name="description" cols="20" rows="4" id="Description" style="width: 100%;"></textarea>
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+                <p align="right">
+                    <input type="submit" class="btn btn-large btn-success" value="Submit" />
+                </p>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,86 @@
+@using CodeGenSite.Utils
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Alex+Brush' rel='stylesheet'
+        type='text/css'>
+    <meta charset="utf-8">
+    <title>@ViewBag.PageTitle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CodeGenerate.me is a free online service that lets you generate QR Codes and Barcodes of all types. Use this easy service to generate all your barcode needs!" />
+    <meta name="keywords" content="Free, Online, Barcode, Dean Hume, Qr Codes" />
+    <meta name="author" content="Dean Hume" />
+    <link rel="shortcut icon" href="@Url.Content(string.Format("{0}{1}", "~/content/img/favicon.ico?v=", @Html.GetVersion()))" />
+    <!-- Le Styles -->
+        <link rel="stylesheet" href="/content/css/bootstrap.css?v=@Html.GetVersion()">
+        <link rel="stylesheet" href="/content/css/bootstrap-responsive.css?v=@Html.GetVersion()">
+        <style>
+        body
+        {
+            padding-top: 0px;
+        }
+    </style>
+    <!-- Le Scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="row-fluid">
+            <div class="span5" style="padding-top: 50px">
+                <div style="z-index: 2; position: absolute;">
+                    <a class="logo" style="" href="/">CodeGenerate</a>
+                </div>
+                <div class="logo_me">
+                    <span style="">me</span>
+                </div>
+            </div>
+            <div class="span7" style="padding-top: 50px">
+                <div class="g-plusone" data-annotation="bubble" data-href="http://www.codegenerate.me">
+                </div>
+            </div>
+            <div id="env" style="position: fixed; right: 20px; top: 0;">
+                <a href="/Code/Saved">
+                    <img src="/content/img/saved.png?v=@Html.GetVersion()" width="54" height="108" alt="My Saved Codes"></a>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #FAFBFC; border-top: 1px solid #EAF2F8; height: 0;
+            margin: 19px 0 0; width: 100%;">
+        </div>
+        <br />
+        @RenderBody()
+        <div style="border-bottom: 1px solid #FAFBFC; border-top: 1px solid #EAF2F8; height: 0;
+            margin: 19px 0 0; width: 100%;">
+        </div>
+        <footer class="footer">
+                <div class="row">
+                    <div class="span2">
+                        <ul class="unstyled">
+                            <li style="font-weight: bold;">CodeGenerate.me</li>
+                            <li><a href="@Url.Action("Contact")">Contact</a></li>
+                            <li><a href="http://www.twitter.com/CodeGenerate">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="span4">
+                        <div class="span4">
+                            <ul class="unstyled">
+                                <li style="font-weight: bold;">About</li>
+                                <li><a href="@Url.Action("API")">API</a></li>
+                                <li><a href="@Url.Action("About")">About us</a></li>
+                                <li><a href="https://plus.google.com/114790681908422991984?rel=author" title="Google+" alt="Google+" rel="author">Designed by</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span1 offset4">
+                        <img src="@Url.Content(string.Format("{0}{1}", "~/content/img/azure-logo.png?v=", @Html.GetVersion()))" width="150 " height="34" alt="Powered by Windows Azure">
+                    </div>
+                </div>
+            </footer>
+    </div>
+</body>
+<!-- Le Analytics -->
+<script type="text/javascript">
+    var _gaq = _gaq || []; _gaq.push(["_setAccount", "UA-30376104-1"]); _gaq.push(["_trackPageview"]); _gaq.push(["_trackPageLoadTime"]);
+    (function () { var a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js"; var b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b); a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://apis.google.com/js/plusone.js"; b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b) })();
+</script>
+</html>

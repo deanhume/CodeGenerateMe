@@ -1,0 +1,88 @@
+﻿@model CodeGenSite.Models.ContactModel
+@{
+    Page.Title = "CodeGenerate.me - Get in Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <!-- Action headers -->
+    if (Model.SentSuccesfully == 3)
+    {
+        <div class="row">
+            <div class="span7 offset2">
+                <h2>
+                    Contact Us</h2>
+                <p class="alert alert-error">
+                    Sorry, we encountered an error while sending your email. Please try again.</p>
+            </div>
+        </div>
+    }
+    else if (Model.SentSuccesfully == 1)
+    {
+        <div class="row">
+            <div class="span7 offset2">
+                <h2>
+                    Contact Us</h2>
+                <p>
+                    If you have any suggestions or any additional codes added to our current list, please
+                    feel free to let us know and we will endeavour to add it!</p>
+            </div>
+        </div>
+    }
+    else if (Model.SentSuccesfully == 2)
+    {
+        <div class="row">
+            <div class="span7 offset2">
+                <h2>
+                    Contact Us</h2>
+                <p class="alert alert-success">
+                    Thank you for your email, we will be in contact shortly!</p>
+            </div>
+        </div>
+    }
+
+    <!-- Form -->
+    if (Model.SentSuccesfully != 2)
+    {
+        <div class="row">
+            <div class="span6 offset2 emo">
+                <i class="icon-envelope"></i>Contact Us
+                <br />
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Subject)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Subject)
+                    @Html.ValidationMessageFor(model => model.Subject)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Description)
+                </div>
+                <div>
+                    <textarea name="description" cols="20" rows="4" id="Description" style="width: 100%;"></textarea>
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+                <p align="right">
+                    <input type="submit" class="btn btn-large btn-success" value="Submit" />
+                </p>
+            </div>
+        </div>
+    }
+}
