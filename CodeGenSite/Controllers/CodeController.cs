@@ -28,6 +28,7 @@
         {
             ViewBag.PageTitle = "CodeGenerate.me - A little bit more information about our free and efficient barcode and QR code generating service.";
 
+
             return View();
         }
 
@@ -49,7 +50,7 @@
         public ActionResult Contact()
         {
             ViewBag.PageTitle = 
-                "CodeGenerate.me - Contact us.";
+                "CodeGenerate.me - Contact us today.";
 
             return View(new ContactModel {SentSuccesfully = 1});
         }
@@ -57,8 +58,8 @@
         [HttpPost]
         public ActionResult Contact(ContactModel contactModel)
         {
-            ViewBag.PageTitle = 
-                "CodeGenerate.me - Contact us.";
+            ViewBag.PageTitle =
+                "CodeGenerate.me - Contact us today.";
 
             if (ModelState.IsValid)
             {

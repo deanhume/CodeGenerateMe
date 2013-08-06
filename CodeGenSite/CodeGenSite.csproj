@@ -227,10 +227,12 @@
     <None Include="manifest.webapp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\PublishProfiles\codegenerate - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\codegenerate - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\Deploy to Azure.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\codegenerate - FTP.pubxml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\PublishProfiles\codegenerate - Web Deploy.pubxml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

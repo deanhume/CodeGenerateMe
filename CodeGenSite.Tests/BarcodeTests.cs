@@ -19,7 +19,7 @@ namespace CodeGenSite.Tests
             BarcodeObject calculated = barcode.GenerateBarcode(codabarType, value); 
 
             // Assert
-            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(1206));
+            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(4907));
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace CodeGenSite.Tests
             BarcodeObject calculated = barcode.GenerateBarcode(codabarType, value);
 
             // Assert
-            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(1745));
+            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(2756));
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace CodeGenSite.Tests
             BarcodeObject calculated = barcode.GenerateBarcode(codabarType, value);
 
             // Assert
-            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(2824));
+            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(5962));
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace CodeGenSite.Tests
             BarcodeObject calculated = barcode.GenerateBarcode(codabarType, value);
 
             // Assert
-            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(2117));
+            Assert.That(calculated.ImageBytes.Length, Is.EqualTo(4307));
         }
     }
 }
